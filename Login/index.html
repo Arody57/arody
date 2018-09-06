@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Inicio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css">
+</head>
+
+<body>
+    <nav>
+        <div class="nav-wrapper teal lighten-2">
+            <div class="container">
+                <a href="#" class="brand-logo left">Inicio</a>
+                <ul id="nav-mobile" class="right">
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h3>Actualizar datos</h3>
+
+        <div class="row">
+            <div class="input-field col s6">
+                <input type="text" placeholder="Nombre" id="nombre">
+                <input type="text" placeholder="Telefono" id="telefono">
+
+                <a class="waves-effect waves-light btn" id="btnGuardar">
+                    <i class="material-icons left">save</i>Registrar
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+
+    <script src="js/main.js"></script>
+
+
+    <script src="https://www.gstatic.com/firebasejs/5.4.2/firebase.js"></script>
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyBcZ5yDHs5DIaABNelkyyoDeZNDmtY4Sko",
+            authDomain: "login-e87d0.firebaseapp.com",
+            databaseURL: "https://login-e87d0.firebaseio.com",
+            projectId: "login-e87d0",
+            storageBucket: "login-e87d0.appspot.com",
+            messagingSenderId: "715320919658"
+        };
+        firebase.initializeApp(config);
+    </script>
+</body>
+
+</html>
