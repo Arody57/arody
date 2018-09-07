@@ -35,7 +35,7 @@ $(document).ready(function () {
             });
         } else {
             M.toast({
-                html: 'Insgrese un nombre de Usuario'
+                html: 'Ingrese un nombre de Usuario'
             });
         }
     });
@@ -47,7 +47,7 @@ $(document).ready(function () {
 
 function GuardarDatos() {
     if (!imagen) {
-        imagen = "https://publicdomainvectors.org/photos/1389952697.png";
+        imagen = "http://tecdistro.com/wp-content/uploads/2015/04/user.png";
     }
     var user = firebase.auth().currentUser;
 
