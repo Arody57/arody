@@ -11,28 +11,36 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css">
+
+    <link rel="stylesheet" href="css/datos.css">
 </head>
-<style>
-    img{
-        width: 100px;
-        height: 100px;
-        border: 1px solid #000;
-    } 
-</style>
 
 <body>
 
     <div class="container">
+        <p>Antes de Comenzar...</p>
         <h2 class="center-align">Perfil de Usuario</h2>
-        <p> Nombre </p>
-        <input type="text" name="" id="nombre" placeholder="Usuario">
-        <!-- <p> Telefono </p>
-        <input type="text" name="" id="telefono" placeholder="1234...">
 
-        Subir una Imagen
-        <p> Seleccionar una imagen </p>
+        <!-- <label>Browser Select</label>
+        <select class="browser-default" id="opciones">
+            <option value="" disabled selected>Elija Tipo de Usuario</option>
+            <option value="Empleado">Empleado</option>
+            <option value="Administrador">Administrador</option>
+        </select><br> -->
 
         <div class="row">
+            <div class="col s1"></div>
+            <div class="col s10">
+                <div class="input-field">
+                    <input id="nombre" type="text" class="validate">
+                    <label for="nombre">Nombre de Usuario</label>
+                </div><br>
+            </div>
+            <div class="col s12"></div>
+        </div>
+
+        <div class="row">
+            <div class="col s1"></div>
             <div class="col s8">
                 <div class="file-field input-field">
                     <div class="btn">
@@ -44,27 +52,31 @@
                     </div>
                 </div>
             </div>
-            <div class="col s4">
+            <div class="col s2">
                 <img id="previsualizacion">
             </div>
-        </div> -->
+        </div>
 
-        <a class="waves-effect waves-light btn-large" id="btnDatos">
-            <i class="material-icons left">chevron_right</i>Enviar
-        </a>
-
+        <div class="center-align">
+            <a class="waves-effect waves-light btn-large" id="btnDatos">
+                <i class="material-icons left">save</i>Enviar
+            </a>
+            <a class="waves-effect waves-light btn-large" id="btnIniciar">
+                <i class="material-icons left">chevron_right</i>Comenzar
+            </a>
+        </div>
     </div>
 
 
-
     <!-- Compiled and minified JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
 
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
         crossorigin="anonymous"></script>
 
+
     <script src="js/datos.js"></script>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
 
     <script src="https://www.gstatic.com/firebasejs/5.4.2/firebase.js"></script>
     <script>
