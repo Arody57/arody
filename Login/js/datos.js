@@ -1,13 +1,12 @@
 var imagen;
 $(document).ready(function () {
-    $('#btnIniciar').hide();
     // Seguridad para Saber si ha Iniciado Seccion
     firebase.auth().onAuthStateChanged(function (user) {
         if (user) {
             console.log('Conetado');
         } else {
             console.log('Usuario No Logeado');
-            location.assign('login.html');
+            location.assign('index.html');
         }
     });
 
@@ -22,41 +21,38 @@ $(document).ready(function () {
     });
 
     $('#btnDatos').click(function () {
-        var nombre = $('#nombre').val();
-
         if (nombre != "") {
+            $("#spinner").html("<img src='imagenes/spinner.gif' style='width:100px; height:100px;'/>");
+            $('#btnDatos').hide();
+
+            if (!imagen) {
+                imagen = "http://tecdistro.com/wp-content/uploads/2015/04/user.png";
+            }
+            var nombre = $('#nombre').val();
             var user = firebase.auth().currentUser;
-            user.updateProfile({
 
-                displayName: nombre
+            firebase.database().ref('Usuario/' + user.uid).set({
+                uid: user.uid,
+                Correo: user.email,
+                Nombre: nombre,
+                Foto: imagen
 
-            }).then(GuardarDatos).catch(function (error) {
-                alert("Error" + error);
+            }, function () {
+                M.toast({
+                    html: 'Datos Guardados'
+                });
+                setTimeout ('Exitoso()', 5000); 
+                location.assign('inicio.html');
             });
+
         } else {
             M.toast({
-                html: 'Insgrese un nombre de Usuario'
+                html: 'Ingrese un nombre de Usuario'
             });
         }
     });
-
-    $('#btnIniciar').click(function(){
-        location.assign('inicio.html');
-    });
 });
 
-function GuardarDatos() {
-    if (!imagen) {
-        imagen = "https://publicdomainvectors.org/photos/1389952697.png";
-    }
-    var user = firebase.auth().currentUser;
-
-    firebase.database().ref('Usuario/' + user.uid).set({
-        uid: user.uid,
-        Correo: user.email,
-        Nombre: user.displayName,
-        Foto: imagen
-    });
-    $('#btnIniciar').show();
-    $('#btnDatos').hide();
+function Exitoso(){
+    $("#spinner").html("");
 }
