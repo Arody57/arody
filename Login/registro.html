@@ -12,50 +12,76 @@
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css">
 </head>
+<link rel="icon" type="image/jpg" href="https://media.licdn.com/dms/image/C4E0BAQHEXaWKDb7IUA/company-logo_200_200/0?e=2159024400&v=beta&t=8e4e2mbA9A7-2Z9q4Wj7neot6AbtLDJCbBeRyKbXY4c" >
 
-<body>
+<div class="container">
+        <input id="password" type="password" class="validate">
+        <body background  =  "https://eraseunvangogh.files.wordpress.com/2014/01/degradado-fondo-foros-de-diseo-y-desarrollo-web-hawaii-dermatology-32285.jpg"></body>>
     <div class="container">
         <h2 class="center-align">REGISTRO</h2>
-        <p>Email</p>
-        <input type="text" name="" id="email" placeholder="email/correo">
-        <p>Contraseña</p>
-        <input type="password" name="" id="password" placeholder="Contraseña">
-        <p>Confirmar Contraseña</p>
-        <input type="password" name="" id="passwordConf" placeholder="Contraseña">
-        <br><br>
-        <div class="center-align">
-            <a class="waves-effect waves-light btn-large" id="btnRegistrar">
-                <i class="material-icons left">save</i>Registrar
-            </a>
-            <a class="waves-effect waves-light btn-large red darken-1" id="btnCancelar">
-                <i class="material-icons left">close</i>Cancelar
-            </a>
+        <div class="row">
+         <div class="col s10">
+                <div class="input-field">
+                    <input id="email" type="email" class="validate">
+                    <label for="email">Email</label>
+                </div>
+            </div>
         </div>
-    </div>
+                <br>
+
+                <div class="row">
+                        <div class="col s10">
+                            <div class="input-field">
+                                <input id="password" type="password" class="validate">
+                                <label for="password"> Password </label>
+                            </div>
+                        </div>
+                    </div>       
+                            <br>
+                                <div class="row">
+                                    <div class="col s10">
+                                        <div class="input-field">
+                                            <input id="passwordConf" type="password" class="validate">
+                                            <label for="password"> Confirm Password </label>
+                                        </div>
+                                    </div>
+                                </div>
+                                        <br>
+                                    </div>
+                                    <div class="row">
+                        <div class="center-align">
+                            <a class="waves-effect waves-light btn-large" id="btnRegistrar">
+                                <i class="material-icons left">save</i>Registrar
+                            </a>
+                            <a class="waves-effect waves-light btn-large red darken-1" id="btnCancelar">
+                                <i class="material-icons left">close</i>Cancelar
+                            </a>
+                        </d iv>
+                    </div>
 
 
-    <!-- Compiled and minified JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
+                    <!-- Compiled and minified JavaScript -->
+                    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
 
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-        crossorigin="anonymous"></script>
+                    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+                        crossorigin="anonymous"></script>
 
-    <script src="js/registro.js"></script>
+                    <script src="js/registro.js"></script>
 
 
-    <script src="https://www.gstatic.com/firebasejs/5.4.2/firebase.js"></script>
-    <script>
-        // Initialize Firebase
-        var config = {
-            apiKey: "AIzaSyBcZ5yDHs5DIaABNelkyyoDeZNDmtY4Sko",
-            authDomain: "login-e87d0.firebaseapp.com",
-            databaseURL: "https://login-e87d0.firebaseio.com",
-            projectId: "login-e87d0",
-            storageBucket: "login-e87d0.appspot.com",
-            messagingSenderId: "715320919658"
-        };
-        firebase.initializeApp(config);
-    </script>
+                    <script src="https://www.gstatic.com/firebasejs/5.4.2/firebase.js"></script>
+                    <script>
+                        // Initialize Firebase
+                        var config = {
+                            apiKey: "AIzaSyBcZ5yDHs5DIaABNelkyyoDeZNDmtY4Sko",
+                            authDomain: "login-e87d0.firebaseapp.com",
+                            databaseURL: "https://login-e87d0.firebaseio.com",
+                            projectId: "login-e87d0",
+                            storageBucket: "login-e87d0.appspot.com",
+                            messagingSenderId: "715320919658"
+                        };
+                        firebase.initializeApp(config);
+                    </script>
 </body>
 
 </html>
