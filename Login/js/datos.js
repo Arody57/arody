@@ -41,7 +41,7 @@ $(document).ready(function () {
                 M.toast({
                     html: 'Datos Guardados'
                 });
-                setTimeout ('Exitoso()', 4000); 
+                setTimeout ('Exitoso()', 5000); 
                 location.assign('inicio.html');
             });
 

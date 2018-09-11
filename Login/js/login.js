@@ -21,6 +21,8 @@ $(document).ready(function () {
         password = $('#password').val();
 
         firebase.auth().signInWithEmailAndPassword(email, password).then(Exitoso).catch(error);
+
+        
     });
 
     $('#btnRegistro').click(function () {
