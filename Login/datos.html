@@ -12,10 +12,20 @@
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css">
 
+    <link rel="stylesheet" href="css/loading.css">
     <link rel="stylesheet" href="css/datos.css">
 </head>
-<link rel="icon" type="image/jpg" href="https://media.licdn.com/dms/image/C4E0BAQHEXaWKDb7IUA/company-logo_200_200/0?e=2159024400&v=beta&t=8e4e2mbA9A7-2Z9q4Wj7neot6AbtLDJCbBeRyKbXY4c" >
-<body background  =  "https://eraseunvangogh.files.wordpress.com/2014/01/degradado-fondo-foros-de-diseo-y-desarrollo-web-hawaii-dermatology-32285.jpg"></body>> 
+
+<body>
+    <!-- SPinner -->
+    <div id="load" class="loading">
+        <div class='outer-div'>
+            <div class='middle-div'>
+                <div class="loader1" id="loader1"></div>
+                <div class="loader2" id="loader2"></div>
+            </div>
+        </div>
+    </div>
 
     <div class="container">
         <p>Antes de Comenzar...</p>
@@ -61,9 +71,6 @@
             <a class="waves-effect waves-light btn-large" id="btnDatos">
                 <i class="material-icons left">save</i>Enviar
             </a>
-            <a class="waves-effect waves-light btn-large" id="btnIniciar">
-                <i class="material-icons left">chevron_right</i>Comenzar
-            </a>
         </div>
     </div>
 
@@ -73,7 +80,7 @@
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
         crossorigin="anonymous"></script>
 
-
+    <script src="js/loading.js"></script>
     <script src="js/datos.js"></script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
