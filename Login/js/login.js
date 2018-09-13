@@ -5,7 +5,7 @@ function Exitoso() {
     //     html: ':)'
     // });
     // $("#spinner").html("");
-    location.assign("index.html");
+    location.assign("inicio.html");
 };
 
 function error() {
@@ -21,8 +21,6 @@ $(document).ready(function () {
         password = $('#password').val();
 
         firebase.auth().signInWithEmailAndPassword(email, password).then(Exitoso).catch(error);
-
-        
     });
 
     $('#btnRegistro').click(function () {

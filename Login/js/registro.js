@@ -38,19 +38,11 @@ $(document).ready(function () {
             });
         } else {
             firebase.auth().createUserWithEmailAndPassword(email, password).then(Exitoso).catch(alFinalizar);
-            $('.btn').on('click', function() {
-                var $this = $(this);
-              $this.button('loading');
-                setTimeout(function() {
-                   $this.button('reset');
-               }, 8000);
-            });
-            
         }
     });
 
     $("#btnCancelar").click(function () {
-        location.assign('login.html');
+        location.assign('index.html');
     });
 
 });

@@ -1,5 +1,6 @@
 var imagen;
 $(document).ready(function () {
+
     // Seguridad para Saber si ha Iniciado Seccion
     firebase.auth().onAuthStateChanged(function (user) {
         if (user) {
@@ -10,6 +11,7 @@ $(document).ready(function () {
         }
     });
 
+    
     $("#imagen").change(function () {
         var descriptor = new FileReader();
         descriptor.readAsDataURL(this.files[0]);
@@ -21,27 +23,24 @@ $(document).ready(function () {
     });
 
     $('#btnDatos').click(function () {
+
+        var nombre = $('#nombre').val();
+
         if (nombre != "") {
-            $("#spinner").html("<img src='imagenes/spinner.gif' style='width:100px; height:100px;'/>");
-            $('#btnDatos').hide();
+            $('#load').delay(2000).fadeOut("slow");
 
             if (!imagen) {
-                imagen = "http://tecdistro.com/wp-content/uploads/2015/04/user.png";
+                imagen = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQpdX6tPX96Zk00S47LcCYAdoFK8INeCElPeJrVDrh8phAGqUZP_g";
             }
-            var nombre = $('#nombre').val();
             var user = firebase.auth().currentUser;
 
             firebase.database().ref('Usuario/' + user.uid).set({
                 uid: user.uid,
                 Correo: user.email,
-                Nombre: nombre,
+                Nombre: nombre, 
                 Foto: imagen
 
             }, function () {
-                M.toast({
-                    html: 'Datos Guardados'
-                });
-                setTimeout ('Exitoso()', 5000); 
                 location.assign('inicio.html');
             });
 
@@ -52,7 +51,3 @@ $(document).ready(function () {
         }
     });
 });
-
-function Exitoso(){
-    $("#spinner").html("");
-}

@@ -13,49 +13,51 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css">
     <link rel="icon" type="image/jpg" href="https://media.licdn.com/dms/image/C4E0BAQHEXaWKDb7IUA/company-logo_200_200/0?e=2159024400&v=beta&t=8e4e2mbA9A7-2Z9q4Wj7neot6AbtLDJCbBeRyKbXY4c">
     <link rel="stylesheet" href="css/loading.css">
+    <link rel="stylesheet" href="css/login.css">
 </head>
 <link rel="icon" type="image/jpg" href="https://media.licdn.com/dms/image/C4E0BAQHEXaWKDb7IUA/company-logo_200_200/0?e=2159024400&v=beta&t=8e4e2mbA9A7-2Z9q4Wj7neot6AbtLDJCbBeRyKbXY4c">
 
-<body background="https://eraseunvangogh.files.wordpress.com/2014/01/degradado-fondo-foros-de-diseo-y-desarrollo-web-hawaii-dermatology-32285.jpg">
-
-    <div id="load" class=" loading ">
+<body>
+    <div id="load" class="loading">
         <div class='outer-div'>
             <div class=" middle-div">
                 <div class="loader1" id="loader1"></div>
                 <div class="loader2" id="loader2"></div>
-
             </div>
         </div>
     </div>
-
-    <div class="container" style = "padding-top:10% ">
-        <h2 class="center-align" style="margin:0 ! important;">REGISTRO</h2>
-        <div class="row">
-                <div class="container">
-                    <div class="input-field col s10">
-                        <input id="email" type="email" class="validate">
-                        <label for="email">Email</label>
+    <div class="container" style="padding-top:5%">
+        <div class="fondo">
+            <div class="col s10">
+                <div class="input-field">
+                    <h2 class="center-align" style="color:rgb(255, 255, 255)" style="margin:0 !important;" ;>REGISTRO</h2>
+                </div>
+                <div class="row">
+                    <div class="container">
+                        <div class="input-field col s12">
+                            <input id="email" style="color:#FDFEFF" ; type="email" class="validate">
+                            <label for="email" style="color:#FDFEFF";>Correo Electrónico</label>
+                            <div class="row">
+                                <div class="input-field col s12">
+                                    <input id="password" type="password" style="color:#FDFEFF" class="validate">
+                                    <label for="password" style="color:#FDFEFF" ;> Contraseña </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col s12">
+                                <div class="input-field">
+                                    <input id="passwordConf" style="color:#FDFEFF" ; type="password" class="validate">
+                                    <label for="passwordConf" style="color:#FDFEFF" ;> Confirmar Contraseña </label>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-
-        <div class="row">
-            <div class="col s10">
-                <div class="input-field">
-                    <input id="password" type="password" class="validate">
-                    <label for="password"> Password </label>
-                </div>
-            </div>
-            <br>
-        </div>
-        <div class="row">
-            <div class="col s10">
-                <div class="input-field">
-                    <input id="passwordConf" type="password" class="validate">
-                    <label for="password"> Confirm Password </label>
                 </div>
             </div>
         </div>
-        <br>
     </div>
+    <br>
     <div class="row">
         <div class="center-align">
             <a class="waves-effect waves-light btn-large" id="btnRegistrar">
@@ -66,22 +68,15 @@
             </a>
         </div>
     </div>
-
-
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
-
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
         crossorigin="anonymous"></script>
-
-    <script src="js/registro.js"></script>
-
-    <script src="js/loading.js"></script>
-    <script src="js/login.js"></script>
-
+        <script src="js/loading.js"></script>
+        <script src="js/registro.js"></script>
     <script src="https://www.gstatic.com/firebasejs/5.4.2/firebase.js"></script>
     <script>
-        // Initialize Firebase
+        // Initialize Firebase  
         var config = {
             apiKey: "AIzaSyBcZ5yDHs5DIaABNelkyyoDeZNDmtY4Sko",
             authDomain: "login-e87d0.firebaseapp.com",

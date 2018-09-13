@@ -1,21 +1,21 @@
-html, body{
+html,
+body {
     width: 100%;
     height: 100%;
 }
-body{
+
+body {
     background-image: url('../imagenes/colorfondo.jpg');
     background-size: cover;
     background-repeat: no-repeat;
 }
-.fondo{
+
+.fondo {
     background: rgba(0, 0, 0, .5);
-    padding: 20px;
+    padding: 7%;
+
 }
-#previsualizacion{
-    width: 110px;
-    height: 110px;
-    border-radius: 50%;
-}
-.pre{
-    text-align: center;
+#btnLogin,
+#btnRegistro{
+    margin: 10px 0px;
 }

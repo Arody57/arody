@@ -1,51 +1,63 @@
+// Inicializacion de la Pagina
 $(document).ready(function () {
+    // Funcion del firebase para verificar si a inicado session
+
     firebase.auth().onAuthStateChanged(function (user) {
+
         if (user) {
-            console.log(user);
-            console.log('Usuario: ' + user.uid + ' está logueado con ' + user.providerData[0].providerId);
-            var logueado = '<li><a>' + user.displayName + '</a></li>';
-            logueado += '<li><a class="waves-effect waves-light btn blue darken-3"><i class="material-icons" id="btnLogout">exit_to_app</i></a></li>';
+            // firebase.auth().currentUser nos ayuda a elejir el usuario            
+            var user = firebase.auth().currentUser;
 
+            // Se conecta a ala base de datos y Busca los valores del usuario conectado
+            firebase.database().ref("Usuario/" + user.uid)
+                .once("value").then(VerDatos);
+
+            // Dibujar los valore en la paginaVerDatos
+
+            var logueado = '<li>Salir</li>';
+            logueado += '<li><a class="waves-effect waves-light btn light-green darken-1"><i class="material-icons" id="btnLogout">exit_to_app</i></a></li>';
+
+            // la variable 'logeado' se va a dibujar en el ID nav-mobile
             $(logueado).appendTo('#nav-mobile');
-            $(btnLogout).click(desconectar);
 
+            // Funcion cuando se haga click en el boton salir
+            $(btnLogout).click(desconectar);
         } else {
-            console.log('Usuario No Logeado');
-            location.assign('login.html');
+            // Si el Usuario no a inicado session se regresara al login.html
+            location.assign('index.html');
         }
     });
 
-    firebase.database()
 
+    // Materialize para el menu lateral izquierdo 
+    // lo que hace es esconder el menu cuando la pantalla este pequeño
+    $('.sidenav').sidenav();
+});
 
-    
-    function desconectar() {
-        firebase.auth().signOut().then(function () {
-            location.assign('login.html');
-        }, function (error) {
-            M.toast({
-                html: 'Error al Deslogearse'
-            });
-        });
-    };
+// Funcion para dibujar los datos en la pagina
+// esta funcion se usa en la linea 12
 
-    $('#btnGuardar').click(function(){
-        var user = firebase.auth().currentUser;
-        var nombre = $('#nombre').val();
-        var telefono = $('#telefono').val();
-        
-        user.updateProfile({
-            displayName: nombre,
-            photoURL: telefono
-    
-        }).then(function () {
-            M.toast({
-                html: 'Actualizado'
-            });
-            console.log(user);
-        }).catch(function (error) {
-            alert("Error");
+function VerDatos(snapshot) {
+    var nombre = (snapshot.val() && snapshot.val().Nombre);
+    var foto = (snapshot.val() && snapshot.val().Foto);
+    var email = (snapshot.val() && snapshot.val().Correo);
+
+    var MostrarDatos = '<a href="#user"><img class="circle" src=' + foto + '></a>';
+    MostrarDatos += '<a href="#name"><span class="white-text name">' + nombre + '</span></a>';
+    MostrarDatos += '<a href="#email"><span class="white-text email">' + email + '</span></a>';
+
+    $(MostrarDatos).appendTo('#Mostrardatos');
+
+}
+
+// Funcon para cerrar session
+// esta funcion se usa en la linea 24
+function desconectar() {
+    firebase.auth().signOut().then(function () {
+        location.assign('login.html');
+    }, function () {
+        M.toast({
+            html: 'Error al Deslogearse'
         });
     });
-
-});
+};
