@@ -1,17 +1,15 @@
 var imagen;
 $(document).ready(function () {
-
     // Seguridad para Saber si ha Iniciado Seccion
     firebase.auth().onAuthStateChanged(function (user) {
         if (user) {
             console.log('Conetado');
+
         } else {
-            console.log('Usuario No Logeado');
             location.assign('index.html');
         }
     });
 
-    
     $("#imagen").change(function () {
         var descriptor = new FileReader();
         descriptor.readAsDataURL(this.files[0]);
@@ -34,10 +32,10 @@ $(document).ready(function () {
             }
             var user = firebase.auth().currentUser;
 
-            firebase.database().ref('Usuario/' + user.uid).set({
+            firebase.database().ref('Usuario/' + user.uid + '/Cuenta').set({
                 uid: user.uid,
                 Correo: user.email,
-                Nombre: nombre, 
+                Nombre: nombre,
                 Foto: imagen
 
             }, function () {

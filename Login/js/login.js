@@ -1,10 +1,6 @@
 var email, password;
 
 function Exitoso() {
-    // M.toast({
-    //     html: ':)'
-    // });
-    // $("#spinner").html("");
     location.assign("inicio.html");
 };
 
@@ -26,9 +22,4 @@ $(document).ready(function () {
     $('#btnRegistro').click(function () {
         location.assign('registro.html');
     });
-
-    // $('#btnCancelar').click(function () {
-    //     location.assign('index.html');
-    // });
-
 });

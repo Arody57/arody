@@ -12,12 +12,15 @@
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css">
     <link rel="icon" type="image/jpg" href="https://media.licdn.com/dms/image/C4E0BAQHEXaWKDb7IUA/company-logo_200_200/0?e=2159024400&v=beta&t=8e4e2mbA9A7-2Z9q4Wj7neot6AbtLDJCbBeRyKbXY4c">
+
     <link rel="stylesheet" href="css/loading.css">
     <link rel="stylesheet" href="css/login.css">
+
+    <link rel="icon" type="image/jpg" href="https://media.licdn.com/dms/image/C4E0BAQHEXaWKDb7IUA/company-logo_200_200/0?e=2159024400&v=beta&t=8e4e2mbA9A7-2Z9q4Wj7neot6AbtLDJCbBeRyKbXY4c">
 </head>
-<link rel="icon" type="image/jpg" href="https://media.licdn.com/dms/image/C4E0BAQHEXaWKDb7IUA/company-logo_200_200/0?e=2159024400&v=beta&t=8e4e2mbA9A7-2Z9q4Wj7neot6AbtLDJCbBeRyKbXY4c">
 
 <body>
+    <!-- Spinner -->
     <div id="load" class="loading">
         <div class='outer-div'>
             <div class=" middle-div">
@@ -26,54 +29,43 @@
             </div>
         </div>
     </div>
-    <div class="container" style="padding-top:5%">
+
+    <div class="contenido">
         <div class="fondo">
-            <div class="col s10">
+            <div class="container">
+                <h2 class="center-align white-text">REGISTRO</h2>
+
                 <div class="input-field">
-                    <h2 class="center-align" style="color:rgb(255, 255, 255)" style="margin:0 !important;" ;>REGISTRO</h2>
+                    <input type="email" id="email" class="white-text">
+                    <label for="email" class=" white-text">Correo Electrónico</label>
                 </div>
-                <div class="row">
-                    <div class="container">
-                        <div class="input-field col s12">
-                            <input id="email" style="color:#FDFEFF" ; type="email" class="validate">
-                            <label for="email" style="color:#FDFEFF";>Correo Electrónico</label>
-                            <div class="row">
-                                <div class="input-field col s12">
-                                    <input id="password" type="password" style="color:#FDFEFF" class="validate">
-                                    <label for="password" style="color:#FDFEFF" ;> Contraseña </label>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col s12">
-                                <div class="input-field">
-                                    <input id="passwordConf" style="color:#FDFEFF" ; type="password" class="validate">
-                                    <label for="passwordConf" style="color:#FDFEFF" ;> Confirmar Contraseña </label>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                <div class="input-field">
+                    <input type="password" id="password" class="white-text">
+                    <label for="password" class=" white-text"> Contraseña </label>
+                </div>
+                <div class="input-field">
+                    <input type="password" id="passwordConf" class="white-text">
+                    <label for="passwordConf" class=" white-text"> Confirmar Contraseña </label>
+                </div>
+                <br>
+                <div class="center-align">
+                    <a class="waves-effect waves-light btn-large" id="btnRegistrar">
+                        <i class="material-icons left">save</i>Registrar
+                    </a>
+                    <a class="waves-effect waves-light btn-large red darken-1" id="btnCancelar">
+                        <i class="material-icons left">close</i>Cancelar
+                    </a>
                 </div>
             </div>
         </div>
     </div>
-    <br>
-    <div class="row">
-        <div class="center-align">
-            <a class="waves-effect waves-light btn-large" id="btnRegistrar">
-                <i class="material-icons left">save</i>Registrar
-            </a>
-            <a class="waves-effect waves-light btn-large red darken-1" id="btnCancelar">
-                <i class="material-icons left">close</i>Cancelar
-            </a>
-        </div>
-    </div>
+
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
         crossorigin="anonymous"></script>
-        <script src="js/loading.js"></script>
-        <script src="js/registro.js"></script>
+    <script src="js/loading.js"></script>
+    <script src="js/registro.js"></script>
     <script src="https://www.gstatic.com/firebasejs/5.4.2/firebase.js"></script>
     <script>
         // Initialize Firebase  

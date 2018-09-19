@@ -14,10 +14,12 @@
 
     <link rel="stylesheet" href="css/loading.css">
     <link rel="stylesheet" href="css/datos.css">
+    <link rel="icon" type="image/jpg" href="https://media.licdn.com/dms/image/C4E0BAQHEXaWKDb7IUA/company-logo_200_200/0?e=2159024400&v=beta&t=8e4e2mbA9A7-2Z9q4Wj7neot6AbtLDJCbBeRyKbXY4c">
+
 </head>
 
 <body>
-    <!-- SPinner -->
+    <!-- Spinner -->
     <div id="load" class="loading">
         <div class='outer-div'>
             <div class='middle-div'>
@@ -27,52 +29,36 @@
         </div>
     </div>
 
-    <div class="container" style="padding-top: 4%;">
+    <div class="contenido">
         <div class="fondo">
-            <h2 class="center-align white-text">Perfil de Usuario</h2>
+            <div class="container">
+                <h2 class="center-align white-text">Perfil de Usuario</h2>
 
-            <!-- <label>Browser Select</label>
-        <select class="browser-default" id="opciones">
-            <option value="" disabled selected>Elija Tipo de Usuario</option>
-            <option value="Empleado">Empleado</option>
-            <option value="Administrador">Administrador</option>
-        </select><br> -->
-
-            <div class="row">
-                <div class="col s1"></div>
-                <div class="col s10">
-                    <div class="input-field">
-                        <input id="nombre" type="text" class="validate white-text">
-                        <label for="nombre" class=" white-text">Nombre de Usuario</label>
-                    </div><br>
+                <div class="input-field">
+                    <input type="text" id="nombre" class="validate white-text">
+                    <label for="nombre" class=" white-text">Nombre de Usuario</label>
                 </div>
-                <div class="col s12"></div>
-            </div>
-
-            <div class="row">
-                <div class="col s1"></div>
-                <div class="col s10">
-                    <div class="file-field input-field">
-                        <div class="btn">
-                            <span>File</span>
-                            <input type="file" id="imagen">
-                        </div>
-                        <div class="file-path-wrapper">
-                            <input class="file-path validate white-text" type="text">
-                        </div>
+                <div class="file-field">
+                    <div class="btn">
+                        <span>File</span>
+                        <input type="file" id="imagen">
+                    </div>
+                    <div class="file-path-wrapper">
+                        <input class="file-path validate white-text" type="text">
                     </div>
                 </div>
-                <div class="pre">
+                
+                <div class="center-align">
                     <img id="previsualizacion" src="imagenes/camara.png">
                 </div>
-            </div>
+                <br>
+                <div class="center-align">
+                    <a class="waves-effect waves-light btn-large" id="btnDatos">
+                        <i class="material-icons left">save</i>Enviar
+                    </a>
+                </div>
 
-            <div class="center-align">
-                <a class="waves-effect waves-light btn-large" id="btnDatos">
-                    <i class="material-icons left">save</i>Enviar
-                </a>
             </div>
-
         </div>
     </div>
 

@@ -2,13 +2,13 @@ html, body{
     width: 100%;
     height: 100%;
 }
-.nav-cont {
+/* .nav-cont {
     padding-left: 270px;
-}
+} */
 
 .main {
-    padding-left: 270px;
-    padding-right: 20px;
+    padding-left: 340px;
+    padding-right: 40px;
 }
 
 .sidenav-trigger {
@@ -16,12 +16,20 @@ html, body{
 }
 
 .sidenav-style {
-    width: 250px;
+    margin-top: 65px;
+    width: 300px;
 }
-
-
+.sidenav .user-view{
+    padding: 25px 32px 0;
+}
 .circle {
     background: #fff;
+}
+
+.titulo-contenido h4 > i{
+    font-size: 40px;
+    position: relative;
+    top: 5px;
 }
 
 @media only screen and (max-width : 992px) {
@@ -33,14 +41,23 @@ html, body{
     }
 
     .main {
-        padding: 0px 20px
+        padding: 0px 30px
     }
 
     .sidenav-trigger {
         display: inline;
     }
-    
+    .logo{
+        display: none;
+    }
     .sidenav-style {
+        margin-top: 0px;
+        width: 250px;
+    }
+}
+@media only screen and (max-width : 390px) {
+    .sidenav-style {
+        margin-top: 0px;
         width: 200px;
     }
 }

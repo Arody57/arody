@@ -4,7 +4,6 @@ function Exitoso() {
     M.toast({
         html: 'Cuenta Creada'
     });
-    
     location.assign("datos.html");
 };
 
@@ -13,13 +12,19 @@ function alFinalizar(error) {
     if (error !== 'undefined') {
         switch (error.code) {
             case 'auth/email-already-in-use':
-                alert('ERROR: No se puede crear la nueva cuenta de usuario, por que el e-mail ya está en uso !');
+                M.toast({
+                    html: 'No se puede crear la nueva cuenta de usuario, por que el e-mail ya está en uso'
+                });
                 break;
             case 'auth/invalid-email':
-                alert('ERROR: El e-mail facilitado no es un e-mail correcto.');
+                M.toast({
+                    html: 'El e-mail facilitado no es un e-mail correcto'
+                });
                 break;
             default:
-                alert('Se ha producido un error al crear el usuario.\n\n' + error + '\n');
+                M.toast({
+                    html: 'Se ha producido un error al crear el usuario.\n\n' + error + '\n'
+                });
                 break;
         }
     }
