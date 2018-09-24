@@ -1,3 +1,4 @@
+
 var email, password;
 
 function Exitoso() {
@@ -15,9 +16,22 @@ $(document).ready(function () {
     $('#btnLogin').click(function () {
         email = $('#email').val();
         password = $('#password').val();
-
         firebase.auth().signInWithEmailAndPassword(email, password).then(Exitoso).catch(error);
     });
+    $('#email').keypress(function(e){
+        if(e.which == 13) {
+        $('#password').focus();
+        }
+    });
+
+    $('#password').keypress(function(e){
+        if(e.which == 13) {
+            email = $('#email').val();
+            password = $('#password').val();
+            firebase.auth().signInWithEmailAndPassword(email, password).then(Exitoso).catch(error);
+          }
+    });
+
 
     $('#btnRegistro').click(function () {
         location.assign('registro.html');

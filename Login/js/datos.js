@@ -32,15 +32,18 @@ $(document).ready(function () {
             }
             var user = firebase.auth().currentUser;
 
+            firebase.database().ref("Usuario/" + user.uid + "/Cuenta")
+                .once("value").then(function (datos) {
             firebase.database().ref('Usuario/' + user.uid + '/Cuenta').set({
                 uid: user.uid,
                 Correo: user.email,
                 Nombre: nombre,
-                Foto: imagen
-
+                Foto: imagen,
+                EsAdmin: datos.EsAdmin ? user.EsAdmin : false
             }, function () {
                 location.assign('inicio.html');
             });
+        });
 
         } else {
             M.toast({

@@ -18,16 +18,24 @@
 </head>
 
 <body>
+    <!-- Spinner -->
+    <div id="load" class="loading">
+        <div class='outer-div'>
+            <div class='middle-div'>
+                <div class="loader1" id="loader1"></div>
+                <div class="loader2" id="loader2"></div>
+            </div>
+        </div>
+    </div>
+
     <header>
         <div class="navbar-fixed">
             <nav class="nav-cont light-blue darken-3">
                 <div class="nav-wrapper">
-                    <img src="imagenes/logo.png" alt="">
+                    <img src="imagenes/logo.png" alt="" class="left-align">
                     <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
                     <ul id="nav-mobile" class="right">
-
                         <!-- Aqui se dibuja el boton de Salir -->
-                        
                     </ul>
                 </div>
             </nav>
@@ -57,12 +65,10 @@
                 <!-- Opciones del Menu -->
                 <!-- <li><a href="#!"><i class="material-icons">cloud</i>First Link With Icon</a></li> -->
                 <!-- <li><a class="subheader">Subheader</a></li> -->
-                <div class="datosmenu">
-                    <li><a class="waves-effect grey-text text-lighten-3" href="inicio.html"><i class="material-icons grey-text text-lighten-3">home</i>Inicio</a></li>
-                    <li><a class="waves-effect grey-text text-lighten-3" href="#!"><i class="material-icons grey-text text-lighten-3">phonelink</i>Agregar Dispositivos</a></li>
-                    <li><a class="waves-effect grey-text text-lighten-3" href="datos.html"><i class="material-icons grey-text text-lighten-3">person</i>Perfil</a></li>
-                    <li id="dispositivos_icon"><a class="waves-effect grey-text text-lighten-3" href="DispositivosAdm.html"><i class="material-icons grey-text text-lighten-3">laptop</i>Dispositivos Permitidos</a></li>
-                </div>
+                <li><a class="waves-effect grey-text text-lighten-3" href="inicio.html"><i class="material-icons grey-text text-lighten-3">home</i>Inicio</a></li>
+                <li><a class="waves-effect grey-text text-lighten-3" href="AgregarDispositivos.html"><i class="material-icons grey-text text-lighten-3">phonelink</i>Agregar Dispositivos</a></li>
+                <li><a class="waves-effect grey-text text-lighten-3" href="datos.html"><i class="material-icons grey-text text-lighten-3">person</i>Perfil</a></li>
+                <li id="dispositivos_icon"><a class="waves-effect grey-text text-lighten-3" href="#!"><i class="material-icons grey-text text-lighten-3">laptop</i>Dispositivos Permitidos</a></li>
             </ul>
         </aside>
 
@@ -70,90 +76,35 @@
             <div class="titulo-contenido">
                 <h4>
                     <i class="material-icons">laptop</i>
-                    Nuevos Dispositivos
+                    Dispositivos Permitidos
                 </h4>
-                <p>Tambien puedes agregar detalles para o del dispositivo</p>
+                <p>Puede agregar los dispositivos que se utilizan</p>
                 <hr>
             </div>
             <br>
 
             <form class="contenido-from">
-             <select class="browser-default" id="listaDispositivos" >
-                 <option value="" disabled selected>Elige un dispositivo</option>
-             </select>
-
-                <!-- <div class="input-field">
-                    <input type="text" class="input-field" id="Dispositivo">
-                    <label for="Dispositivo">Dispositivo</label>
-                </div> -->
-
-                <div id="nuevotext">
-                    <p>Ingrese las caracteristicas del Dispositivo...</p>
-                    
-                    <div class="input_caracteristicas">
-                        <div class="input-field">
-                            <input type="text" class="input-field" id="proceso">
-                            <label for="proceso">Procesador</label>
-                        </div>
-                        <div class="input-field">
-                            <input type="text" class="input-field" id="ram">
-                            <label for="ram">RAM</label>
-                        </div>
-                        <div class="input-field">
-                            <input type="text" class="input-field" id="discoduro">
-                            <label for="discoduro">Disco Duro</label>
-                        </div>
-                    </div>
-                    <br>
-                </div>
-
-
 
                 <div class="input-field">
-                    <input type="text" class="input-field" id="Marca">
-                    <label for="Marca">Marca del Dispositivo</label>
+                    <input type="text" class="input-field" id="DispositivoPermitido">
+                    <label for="DispositivoPermitido">Nombre Dispositivo</label>
                 </div>
+            </form>
+            <br>
 
-                <div class="input-field">
-                    <input type="text" class="input-field" id="Serial">
-                    <label for="Serial">Serial</label>
-                </div>
-
-
-                <input type="text" id="AsignacionText" style="display:none;">
-                <label for="">Asignacion</label>
-                <p>
-                    <label>
-                        <input type="radio" name="group1" id="EmpresaRadio" onclick="check1(this)">
-                        <span>Empresa</span>
-                    </label>
-                </p>
-                <p>
-                    <label>
-                        <input type="radio" name="group1" id="PropioRadio" onclick="check2(this)">
-                        <span>Propio</span>
-                    </label>
-                </p>
-            </form><br>
-
-            <script>
-                function check1(as) {
-                $('#AsignacionText').val('Empresa');
-            }
-            function check2(as){
-                $('#AsignacionText').val('Propio');
-            }
-            </script>
-
-            <button class="btn waves-effect waves-light btn blue darken-4" type="button" id="guardarDis">Guardar
+            <button class="btn waves-effect waves-light blue darken-4" type="button" id="guardar">Guardar
                 <i class="material-icons right">save</i>
             </button>
-            
+
             <!-- <a class="waves-effect waves-circle waves-light btn-floating secondary-content " id="AgregarLinea">
                 <i class="material-icons right">add</i>
             </a> -->
 
-
+            <br>
+            <p>Todos los Dispositivos Permitidos:</p>
+            <ul class="collection" id="listaDispositivos">
+                </ul>
+            </div>
         </div>
     </div>
     <!-- Compiled and minified JavaScript -->
@@ -164,7 +115,8 @@
 
     <script src="js/loading.js"></script>
     <script src="js/general.js"></script>
-    <script src="js/AgregarDis.js"></script>
+    <script src="js/AgregarDisAdmin.js"></script>
+    <script src="js/MostrarDispositivos.js"></script>
 
 
 
