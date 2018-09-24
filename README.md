@@ -1,2 +1,2 @@
-# arody
+# Inventario_Dispositivos
 proyecto
