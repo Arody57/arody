@@ -34,7 +34,7 @@ $(document).ready(function () {
 
     
     $('#guardarDis').click(function () {
-        var nombre = $('#Dispositivo').val();
+        var nombre = $('#listaDispositivos').val();
         var marca = $('#Marca').val();
         var asignacion = $('#AsignacionText').val();
         var Serial = $('#Serial').val();
