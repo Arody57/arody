@@ -17,17 +17,18 @@ $(document).ready(function () {
 
     $('#listaDispositivos').change(function () {
         var nombre = $('#listaDispositivos').val();
+        console.log(nombre);
    
     });
 
     $('#listaDispositivos').change(function(){
         var nombre = $('#listaDispositivos').val();
     
-        if (nombre == "Computadora" || nombre == "Laptop") {
+        if (nombre == "CPU" || nombre == "Laptop") {
             $('#nuevotext').css('display','block');
             $('#proceso').focus()
         }
-        else if(nombre != "Computadora"){
+        else if(nombre != "CPU" || nombre != "Laptop"){
             $('#nuevotext').css('display','none');
         };
     });

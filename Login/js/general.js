@@ -40,15 +40,13 @@ function VerDatos(snapshot) {
     MostrarDatos += '<a href="#email"><span class="white-text email">' + email + '</span></a>';
 
     if(!datos.EsAdmin){
-        $('#dispositivos_icon').css('display','none');
+        $('.dispositivos_icon').css('display','none');
     }
     else{
         MostrarDatos += '<a href="#admin"><span class="white-text email">Administrador</span></a>';
     }
 
     $(MostrarDatos).appendTo('#Mostrardatos');
-
-    console.log(datos.EsAdmin);
 
 }
 
