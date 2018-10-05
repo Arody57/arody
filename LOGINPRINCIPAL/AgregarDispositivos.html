@@ -11,13 +11,22 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css">
-
     <link rel="icon" type="image/jpg" href="imagenes/plus.ico">
-
+    <link rel="stylesheet" href="css/loading.css">
     <link rel="stylesheet" href="css/inicio.css">
 </head>
 
 <body>
+        <!-- Spinner -->
+        <div id="load" class="loading">
+                <div class='outer-div'>
+                    <div class='middle-div'>
+                        <div class="loader1" id="loader1"></div>
+                        <div class="loader2" id="loader2"></div>
+                    </div>
+                </div>
+            </div>
+        
     <header>
         <div class="navbar-fixed">
             <nav class="nav-cont light-blue darken-3">
@@ -66,12 +75,12 @@
                                 class="material-icons grey-text text-lighten-3">group</i>Usuarios</a></li>
                     <li class="dispositivos_icon"><a class="waves-effect grey-text text-lighten-3" href="DispositivosAdm.html"><i
                                 class="material-icons grey-text text-lighten-3">laptop</i>Dispositivos Permitidos</a></li>
-                    <li class="dispositivos_icon">
+                    <li><a class="subheader grey-text">Menú</a></li>
+                    <li>
                         <div class="divider"></div>
                     </li>
-                    <li class="dispositivos_icon"><a class="subheader grey-text">Menú</a></li>
                     <li><a class="waves-effect grey-text text-lighten-3" href="inicio.html"><i class="material-icons grey-text text-lighten-3">home</i>Inicio</a></li>
-                    <li><a class="waves-effect grey-text text-lighten-3" href="#!"><i class="material-icons grey-text text-lighten-3">phonelink</i>Agregar
+                    <li class="activo"><a class="waves-effect grey-text text-lighten-3" href="#!"><i class="material-icons grey-text text-lighten-3">phonelink</i>Agregar
                             Dispositivos</a></li>
                     <li><a class="waves-effect grey-text text-lighten-3" href="datos.html"><i class="material-icons grey-text text-lighten-3">settings</i>Perfil</a></li>
                 </div>
@@ -90,10 +99,10 @@
             <br>
 
             <form class="contenido-from">
+                <label for="">Elige el Dispositivo</label>
                 <select class="browser-default" id="listaDispositivos">
                     <option value="" disabled selected>Elige un dispositivo</option>
                 </select>
-
 
                 <!-- Primero -->
                 <div id="nuevotext" style="display: none">
@@ -158,39 +167,35 @@
                     </div>
                 </div>
 
-        </div>
+                <div class="input-field">
+                    <input type="text" class="input-field antiTexto" id="Marca">
+                    <label for="Marca">Marca del Dispositivo</label>
+                </div>
 
-        <br>
-
-        <div class="input-field">
-            <input type="text" class="input-field" id="Marca">
-            <label for="Marca">Marca del Dispositivo</label>
-        </div>
-
-        <div class="input-field">
-            <input type="text" class="input-field" id="Serial">
-            <label for="Serial">Serial</label>
-        </div>
+                <div class="input-field">
+                    <input type="text" class="input-field antiTexto" id="Serial">
+                    <label for="Serial">Serial</label>
+                </div>
 
 
-        <input type="texto" id="AsignacionText" style="display:none;">
-        <label for="">Asignacion</label>
-        <p>
-            <label>
-                <input type="radio" name="group1" id="EmpresaRadio" onclick="check1(this)">
-                <span>Empresa</span>
-            </label>
-        </p>
-        <p>
-            <label>
-                <input type="radio" name="group1" id="PropioRadio" onclick="check2(this)">
-                <span>Propio</span>
-            </label>
-        </p>
-        </form><br>
+                <input type="texto" id="AsignacionText" class=" antiTexto" style="display:none;">
+                <label for="">Asignacion</label>
+                <p>
+                    <label>
+                        <input type="radio" name="group1" id="EmpresaRadio" onclick="check1(this)">
+                        <span>Empresa</span>
+                    </label>
+                </p>
+                <p>
+                    <label>
+                        <input type="radio" name="group1" id="PropioRadio" onclick="check2(this)">
+                        <span>Propio</span>
+                    </label>
+                </p>
+            </form><br>
 
-        <script>
-            function check1(as) {
+            <script>
+                function check1(as) {
                 $('#AsignacionText').val('Empresa');
             }
             function check2(as){
@@ -198,19 +203,14 @@
             }
             </script>
 
-        <button class="btn waves-effect waves-light btn blue darken-4" type="button" id="guardarDis">Guardar
-            <i class="material-icons right">save</i>
-        </button>
+            <button class="btn waves-effect waves-light btn blue darken-4" type="button" id="guardarDis">Guardar
+                <i class="material-icons right">save</i>
+            </button>
 
-        <button id="hora">asd</button>
+        </div>
+    </div> 
 
-        <!-- <a class="waves-effect waves-circle waves-light btn-floating secondary-content " id="AgregarLinea">
-                <i class="material-icons right">add</i>
-            </a> -->
 
-        </form>
-    </div>
-    </div>
     <!-- Compiled and minified JavaScript -->
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
         crossorigin="anonymous"></script>

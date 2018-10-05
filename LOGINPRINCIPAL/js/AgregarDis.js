@@ -11,7 +11,6 @@ $(document).ready(function () {
                     $(mostrar).appendTo("#listaDispositivos");
                 });
             });
-
     });
 
 
@@ -52,9 +51,18 @@ $(document).ready(function () {
 
 
     $('#guardarDis').click(function () {
+        var nombre = $('#listaDispositivos').val();
+        var inputs = $('.antiTexto').val();
+        
+        if(nombre == null || inputs == ""){
+            M.toast({
+                html: 'Llenar Campos !!'
+            });
+        }
+        else{
         var cad;
         var f = new Date();
-        cad = f.getDay()+ "/" + (f.getMonth() + 1) + "/" + f.getFullYear() + " - " + f.getHours() + ":" + f.getMinutes() + ":" + f.getSeconds();
+        cad = f.getDay() + "/" + (f.getMonth() + 1) + "/" + f.getFullYear() + " - " + f.getHours() + ":" + f.getMinutes() + ":" + f.getSeconds();
 
         var nombre = $('#listaDispositivos').val();
         var marca = $('#Marca').val();
@@ -90,7 +98,7 @@ $(document).ready(function () {
                 modeloDisp: modeloDisp,
                 cpuDisp: cpuDisp
             };
-        }else {
+        } else {
             Detall = {};
         }
 
@@ -113,6 +121,6 @@ $(document).ready(function () {
         M.toast({
             html: 'Datos Guardados'
         });
+    };
     });
-
 });
